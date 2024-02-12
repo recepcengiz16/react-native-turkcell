@@ -5,18 +5,26 @@ import validations from './validation';
 
 export default function FormWithFormik() {
 
-    const {values,handleSubmit,handleChange,errors,handleBlur,touched} = useFormik({
+    const {values,handleSubmit,handleChange,errors,handleBlur,touched,isSubmitting} = useFormik({
         initialValues:{
             username:"",
             password:"",
             email:""
         },
-        onSubmit:(values)=>{
-            console.log(values)
+        onSubmit:(values,bag)=>{
+            console.log(values);
+            console.log(bag);
+
+            if(values.email=="deneme@gmail.com"){
+                //return bag.setErrors({email:"Bu mail adresi zaten kullanılıyor"})
+                return bag.setFieldError("email","Bu mail adresi zaten kullanılıyor") //ikisi de aynı mana yukardaki ile
+            }
+
         },
         validationSchema:validations
         //handleblur inputtan ayrıldığımız an, handleblur da tagden ayrılınca hata varsa göstersin. Diğer türlü bir yerde hata varsa daha diğerlerine geçmeden hepsinde gösteriyor.
-        //touched da ayrıldığımız anda hataları objenin içine alıyor
+        //touched da ayrıldığımız anda hataları objenin içine alıyor,
+        //isSubmitting submit ediliyorken, mesela loading işleminde kullanabilirsin
     })
 
 
@@ -48,7 +56,7 @@ export default function FormWithFormik() {
             }
         </View>
         <View>
-            <Button title='Kaydet' onPress={handleSubmit} />
+            <Button title='Kaydet' disabled={isSubmitting} onPress={handleSubmit} />
         </View>
     
 
