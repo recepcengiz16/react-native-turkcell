@@ -1,40 +1,41 @@
 import { StyleSheet, TextInput, View, Button } from 'react-native'
-import React,{useState} from 'react'
+import React from 'react'
+import { Formik,useFormik } from 'formik';
 
 export default function FormWithFormik() {
 
-    const [form, setForm] = useState({
-        username:"",
-        password:"",
-        email:""
-    })
-
-    const handleChange = (text,input)=>{
-        setForm((prev)=>({...prev,[input]:text}))
-    }
-    
-    
-    const handleSubmit = ()=>{
-        if (!form.username) {
-            return false;
+    const {values,handleSubmit,handleChange} = useFormik({
+        initialValues:{
+            username:"",
+            password:"",
+            email:""
+        },
+        onSubmit:(values)=>{
+            console.log(values)
         }
-    }
+    })
 
 
   return (
     <View style={styles.container}>
+
+
         <View style={styles.item}>
-            <TextInput style={styles.input} autoCapitalize='none' keyboardType='email-address' placeholder='Email' value={form.email} onChangeText={(email)=>handleChange(email,"email")} />
+            <TextInput style={styles.input} autoCapitalize='none' keyboardType='email-address' placeholder='Email' value={values.email} onChangeText={handleChange("email")} />
         </View>
         <View style={styles.item}>
-            <TextInput style={styles.input} placeholder='Username' value={form.username} onChangeText={(name)=>handleChange(name,"username")} />
+            <TextInput style={styles.input} placeholder='Username' value={values.username} onChangeText={handleChange("username")} />
         </View>
         <View style={styles.item}>
-            <TextInput style={styles.input} secureTextEntry placeholder='Password' value={form.password} onChangeText={(password)=>handleChange(password,"password")} />
+            <TextInput style={styles.input} secureTextEntry placeholder='Password' value={values.password} onChangeText={handleChange("password")} />
         </View>
         <View>
             <Button title='Kaydet' onPress={handleSubmit} />
         </View>
+    
+
+
+       
     </View>
   )
 }
