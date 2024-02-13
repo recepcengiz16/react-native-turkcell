@@ -4,8 +4,8 @@ import ThemeContext from '../../context/ThemeContext'
 
 export default function Home({navigation}) {
 
-    const data = useContext(ThemeContext);
-    console.log(data)
+    const {theme} = useContext(ThemeContext);
+   
 
   return (
     <View style={{ flex:1, justifyContent:"center", alignItems:"center" }}>
