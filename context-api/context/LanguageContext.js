@@ -22,6 +22,7 @@ export const useLang = ()=>{
         throw new Error("useLang hook must be call inside LanguageContextProvider")
     }
 
+    return context;
 }
 
 
