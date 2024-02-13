@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function Item() {
+export default function Item({user}) {
   return (
     <View>
       <Text>Item</Text>
