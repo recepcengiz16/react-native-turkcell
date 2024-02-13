@@ -1,4 +1,4 @@
-import { createContext,useState } from "react";
+import { createContext,useContext,useState } from "react";
 
 const ThemeContext= createContext();
 
@@ -9,5 +9,7 @@ export const ThemeContextProvider = ({children})=>{ // provider altında çağı
         {children} 
     </ThemeContext.Provider>
 }
+
+export const useTheme = ()=>useContext(ThemeContext);
 
 export default ThemeContext;
