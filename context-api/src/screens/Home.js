@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View,Button } from 'react-native'
 import React,{useContext} from 'react'
 import {useTheme} from '../../context/ThemeContext'
-import LanguageContext from '../../context/LanguageContext';
+import { useLang } from '../../context/LanguageContext';
 
 export default function Home({navigation}) {
 
     const {theme} = useTheme();
-    const {lang}=useContext(LanguageContext);
+    const {lang}=useLang();
    
 
   return (
