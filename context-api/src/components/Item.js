@@ -4,7 +4,7 @@ import React from 'react'
 export default function Item({user}) {
   return (
     <View>
-      <Text>Item</Text>
+      <Text>{user.name}</Text>
     </View>
   )
 }
