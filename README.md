@@ -1,1 +1,1 @@
-Geleceği Yazanlar eğitimini takip ederken aldığım notlar
+Geleceği Yazanlar eğitimini takip ederken aldığım notlar.
