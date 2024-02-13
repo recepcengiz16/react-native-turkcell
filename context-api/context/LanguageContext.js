@@ -25,5 +25,3 @@ export const useLang = ()=>{
     return context;
 }
 
-
-export default LanguageContext;
