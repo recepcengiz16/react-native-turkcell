@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View,Button } from 'react-native'
 import React from 'react'
 
-export default function Home() {
+export default function Home({navigation}) {
   return (
-    <View>
-      <Text>Home</Text>
+    <View style={{ flex:1, justifyContent:"center", alignItems:"center" }}>
+      <Text> Ana Sayfa </Text>
+      <Button title='Go to the About' onPress={()=>navigation.navigate("About")} />
     </View>
   )
 }
