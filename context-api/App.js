@@ -5,8 +5,11 @@ import ThemeContext from "./context/ThemeContext"
 import Router from './src/Router';
 
 export default function App() {
-  return ( // value değeri bu provider altındaki herhangi bir component üzerinden erişilebilir
-    <ThemeContext.Provider value={"dark"}> 
+
+  const [theme, setTheme] = useState(""); 
+
+  return ( // value değeri bu provider altındaki herhangi bir component üzerinden erişilebilir ve obje olarak hem state değerini ve fonks. gönderdik. Her yerden bu değer değişebilsin diye
+    <ThemeContext.Provider value={{theme,setTheme}}>  
        <Router />
     </ThemeContext.Provider>
   );
