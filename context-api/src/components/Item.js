@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
 import React from 'react'
 
 export default function Item({user}) {
   return (
     <View>
-      <Text>{user.name}</Text>
+        <TouchableOpacity>
+            <Text>{user.name}</Text>
+        </TouchableOpacity>
     </View>
   )
 }
