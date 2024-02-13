@@ -1,10 +1,10 @@
 import { Button, StyleSheet, Text, View, Button } from 'react-native'
 import React, { useContext } from 'react'
-import ThemeContext from '../../context/ThemeContext'
+import {useTheme} from '../../context/ThemeContext'
 
 export default function Settings() {
 
-  const {theme,setTheme} = useContext(ThemeContext);
+  const {theme,setTheme} = useTheme();
 
   return (
     <View>
