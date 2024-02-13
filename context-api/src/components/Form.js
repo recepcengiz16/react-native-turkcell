@@ -4,7 +4,7 @@ import React from 'react'
 export default function Form() {
   return (
     <View>
-      <TextInput value='Test' style={styles.input} />
+      <TextInput value='Test' style={styles.input} returnKeyType='go' />
     </View>
   )
 }
