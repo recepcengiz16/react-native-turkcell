@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View,Button } from 'react-native'
-import React,{useContext} from 'react'
+import React from 'react'
 import {useTheme} from '../../context/ThemeContext'
 import { useLang } from '../../context/LanguageContext';
 
