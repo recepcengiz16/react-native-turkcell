@@ -10,6 +10,15 @@ export const ThemeContextProvider = ({children})=>{ // provider altında çağı
     </ThemeContext.Provider>
 }
 
-export const useTheme = ()=>useContext(ThemeContext);
+export const useTheme = ()=>{
+
+    const context = useContext(ThemeContext);
+
+    if (context===undefined) {
+        throw new Error("useTheme hook must be call inside ThemeContextProvider");
+    }
+
+    return context;
+}
 
 export default ThemeContext;
