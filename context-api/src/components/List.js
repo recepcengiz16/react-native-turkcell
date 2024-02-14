@@ -11,7 +11,9 @@ export default function List() {
   return (
     <View>
 
-      <Message></Message>
+     {
+        users.length === 0 &&  <Message message="No item" />
+     }
 
       <FlatList 
         data={users} 
