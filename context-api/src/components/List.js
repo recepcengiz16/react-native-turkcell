@@ -2,6 +2,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Item from './Item'
 import { useUsers } from '../../context/UsersContext';
+import Message from './Message';
 
 export default function List() {
 
@@ -9,6 +10,9 @@ export default function List() {
 
   return (
     <View>
+
+      <Message></Message>
+
       <FlatList 
         data={users} 
         keyExtractor={(item)=>item.id}
