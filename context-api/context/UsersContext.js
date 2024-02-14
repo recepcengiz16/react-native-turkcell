@@ -9,9 +9,21 @@ export const UserContextProvider = ({children})=>{
         {id:2,name:"Recep"}
     ])
 
+    const removeUser = (id)=>{
+        
+        const cloned = [...users];
+        const index = cloned.findIndex((user)=>user.id===id);
+        console.log(index);
+    
+        cloned.splice(index,1);
+        setUsers(cloned);
+    }
+    
+
     const values = {
         users,
-        setUsers
+        setUsers,
+        removeUser
     }
 
     return <UserContext.Provider value={values}>{children}</UserContext.Provider>
