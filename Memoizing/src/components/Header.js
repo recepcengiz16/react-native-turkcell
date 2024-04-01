@@ -16,5 +16,5 @@ const styles = StyleSheet.create({
     }
 })
 
-export default React.memo(Header); // ilgili componentin önceki propertyleri ve yeni gelen propertyleri karşılaştırır ve bunlar aynı ise tekrar renden etmez.
+export default React.memo(Header); // ilgili componentin önceki propertyleri ve yeni gelen propertyleri karşılaştırır ve bunlar aynı ise tekrar renden etmez. Primitif tiplerde tercih edilebilir. Çünkü obje ve dizide algılamıyor içeriği aynı olsa bile
 
