@@ -6,6 +6,8 @@ export default function Counter() {
 
     const [count, setCount] = useState(0);
 
+    //usememo array ve objeler için değişim olmasın diye. 
+    //usecallback de fonksiyonlar için react.memo da primitif değerler için property değerleri değişince tekrar render edilsin diye 
     const user = useMemo(()=>{
       return {
         id:1,
