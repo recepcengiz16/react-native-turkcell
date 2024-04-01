@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View,Button } from 'react-native'
 import React from 'react'
+import Header from './Header';
 
 export default function Counter() {
 
@@ -7,11 +8,21 @@ export default function Counter() {
 
 
   return (
-    <View>
+    <View style={styles.container}>
+      <Header />
+
       <Text>{count}</Text>
-      <Button title='Artır' onPress={alert("Merhaba")} />
+      <Button title='Artır' onPress={()=>setCount(count+1)} />
     </View>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    justifyContent:"center",
+    alignItems:"center"
+  },
+  text: {
+    fontSize:24
+  }
+})
